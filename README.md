@@ -34,7 +34,7 @@ dependencies should automatically be installed.
 This package is meant to be run as a script in the command-line/terminal, although the individual functions found in the
 [*geocodeadi.py*](geocode-adi/geocodeadi.py) file may be imported as a module.
 
-The script takes in a comma delimited file, such as a .CSV, that contains the address information. Specifically, the 
+The script takes in a comma-delimited file, such as a .CSV, that contains the address information. Specifically, the 
 file must contain at least 4 columns: *'Address'*, *'City'*, *'State'*, *'ZIP Code'*. These columns must also be 
 labeled as such. The *'Address'* column must contain at least the street number and name. Other information, such as 
 apartment or suite number, is optional. An example of a correctly formatted file of addresses is the
@@ -48,7 +48,7 @@ For example, using the file [*AddressSample.csv*](AddressSample.csv):
 ```
 python -m geocode-adi AddressSample.csv
 ```
-## How does it works?
+## How does it work?
 
 **geocode-adi** works in mapping addresses to ADI in 4 overarching steps:
 1. It imports the addresses into a Pandas DataFrame.
