@@ -1,4 +1,4 @@
-""" geocodeadi setup.py
+""" geocode-adi setup.py
 
 Author: Ayush Doshi
 """
@@ -29,12 +29,7 @@ setup(
         "Programming Language :: Python :: 3.8",
     ],
     python_requires='>=3.8',
-    packages=["geocodeadi"],
+    packages=["geocode-adi"],
     include_package_data=True,
-    install_requires=["requests", "tqdm", "censusgeocode", "geopy", "pandas", "numpy", "pyarrow"],
-    entry_points={
-        "console_scripts": [
-            "geocode_adi=geocodeadi.__main__:main",
-        ]
-    },
+    install_requires=["requests", "tqdm", "censusgeocode", "geopy", "pandas", "numpy", "pyarrow"]
 )

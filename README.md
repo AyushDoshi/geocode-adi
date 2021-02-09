@@ -32,7 +32,7 @@ dependencies should automatically be installed.
 
 ## How to use it?
 This package is meant to be run as a script in the command-line/terminal, although the individual functions found in the
-[*geocodeadi.py*](geocodeadi/geocodeadi.py) file may be imported as a module.
+[*geocodeadi.py*](geocode-adi/geocodeadi.py) file may be imported as a module.
 
 The script takes in a comma delimited file, such as a .CSV, that contains the address information. Specifically, the 
 file must contain at least 4 columns: *'Address'*, *'City'*, *'State'*, *'ZIP Code'*. These columns must also be 
@@ -47,10 +47,6 @@ python -m geocode-adi [PATH_TO_ADDRESS_FILE]
 For example, using the file [*AddressSample.csv*](AddressSample.csv):
 ```
 python -m geocode-adi AddressSample.csv
-```
-Furthermore, if the package is installed with administrative/root privileges, it can be called like so:
-```
-geocode_adi AddressSample.csv
 ```
 ## How does it works?
 
