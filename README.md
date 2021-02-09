@@ -80,4 +80,4 @@ labeled ***failed.csv***.
 [neigh-atlas]: https://www.neighborhoodatlas.medicine.wisc.edu/
 [geocode-adi-pypi]: (https://pypi.org/project/geocode-adi)
 [pop-lab]: https://apl.wisc.edu/
-[us-geocoder]: (https://geocoding.geo.census.gov/)
+[us-geocoder]: https://geocoding.geo.census.gov/
