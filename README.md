@@ -48,7 +48,10 @@ For example, using the file [*AddressSample.csv*](AddressSample.csv):
 ```
 python -m geocode-adi AddressSample.csv
 ```
-
+Furthermore, if the package is installed with administrative/root privileges, it can be called like so:
+```
+geocode_adi AddressSample.csv
+```
 ## How does it works?
 
 **geocode-adi** works in mapping addresses to ADI in 4 overarching steps:
