@@ -1,1 +1,1 @@
-include reader/resources/*
+include geocodeadi/resources/BlockGroupToADI.feather
