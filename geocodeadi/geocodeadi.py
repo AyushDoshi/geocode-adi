@@ -593,7 +593,7 @@ def blockgroup_to_adi(addresses_blockgroup_df):
     print('Mapping Area Deprivation Indices to successfully geocoded addresses using U.S. Census Block Groups...')
 
     # Import the Block Group to ADI DataFrame from the BlockGroupToADI.feather file.
-    with importlib.resources.path('geocode-adi.resources', 'BlockGroupToADI.feather') as blockgroup_to_adi_feather_path:
+    with importlib.resources.path('geocodeadi.resources', 'BlockGroupToADI.feather') as blockgroup_to_adi_feather_path:
         blockgroup_to_adi_df = pandas.read_feather(blockgroup_to_adi_feather_path)
 
     # Slice FIPS code column to the first 12-digits and use it as a key to map Area Deprivation Indices to successfully

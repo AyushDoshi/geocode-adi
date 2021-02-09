@@ -30,7 +30,7 @@ def file_path(path):
     if os.path.isfile(path):
         return path
     else:
-        raise argparse.ArgumentTypeError(f"Address File: Given file, {path}, does not exist.")
+        raise argparse.ArgumentTypeError(f"address_file: Given file, {path}, does not exist.")
 
 
 def main():

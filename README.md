@@ -32,7 +32,7 @@ dependencies should automatically be installed.
 
 ## How to use it?
 This package is meant to be run as a script in the command-line/terminal, although the individual functions found in the
-[*geocodeadi.py*](geocode-adi/geocodeadi.py) file may be imported as a module.
+[*geocodeadi.py*](geocodeadi/geocodeadi.py) file may be imported as a module.
 
 The script takes in a comma delimited file, such as a .CSV, that contains the address information. Specifically, the 
 file must contain at least 4 columns: *'Address'*, *'City'*, *'State'*, *'ZIP Code'*. These columns must also be 
