@@ -2,8 +2,8 @@
 
 ## What is it?
 
-**geocode-adi** is a Python package that allows for the mapping of address information to Gopal K. Singh's [**Area
-Deprivation Index (ADI)**][adi-paper] at the U.S. Census Block Group level, which was calculated by the 
+**geocode-adi** is a Python package that allows for the mapping of address information to Gopal K. Singh's 
+[**Area Deprivation Index (ADI)**][adi-paper] at the U.S. Census Block Group level, which was calculated by the 
 [**Applied Population Lab at UW-Madison**][pop-lab] and made available on 
 [**UW-Madison's Neighborhood Atlas**][neigh-atlas].
 
@@ -23,8 +23,8 @@ out.
 - [Numpy](https://www.numpy.org) - Required for chunking address data and adding "Not A Number" values.
 - [Requests](https://requests.readthedocs.io) - Required for making GET requests to Google.
 - [Geopy](https://geopy.readthedocs.io) - Required for making geocoding API calls to Nominatim/OpenStreetMaps.
-- [Census Geocode](https://github.com/fitnr/censusgeocode) - Required for making geocoding API calls to the [U.S. 
-Census Geocoder][us-geocoder].
+- [Census Geocode](https://github.com/fitnr/censusgeocode) - Required for making geocoding API calls to the 
+[U.S. Census Geocoder][us-geocoder].
 - [tqdm](https://tqdm.github.io/) - Required for making progress bars.
 
 If **geocode-adi** is installed using a binary installer, such as through [PyPI][geocode-adi-pypi], the required 
@@ -77,6 +77,7 @@ labeled ***failed.csv***.
 
 [adi-paper]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1447923/
 [neigh-atlas]: https://www.neighborhoodatlas.medicine.wisc.edu/
-[geocode-adi-pypi]: (https://pypi.org/project/geocode-adi)
+[geocode-adi-pypi]: https://pypi.org/project/geocode-adi
 [pop-lab]: https://apl.wisc.edu/
 [us-geocoder]: https://geocoding.geo.census.gov/
+[geocode-adi-pypi]: https://pypi.org/project/geocode-adi/
