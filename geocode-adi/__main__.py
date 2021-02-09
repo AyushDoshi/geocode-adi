@@ -34,6 +34,9 @@ def file_path(path):
 
 
 def main():
+    """
+    Main function that is called from command-line/terminal.
+    """
     parser = argparse.ArgumentParser(
         description="Convert Addresses to Area Deprivation Indices."
     )
