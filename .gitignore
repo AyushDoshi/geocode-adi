@@ -127,4 +127,3 @@ dmypy.json
 # PyCharm
 .idea
 .idea/*
-*.csv

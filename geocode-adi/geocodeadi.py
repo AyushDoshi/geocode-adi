@@ -3,8 +3,8 @@
 This file contains the functions that are used by the __main__.py file of this module to convert addresses to Area
 Deprivation Indices.
 
-Although functions may be imported as a module, it is recommended that the tool is used from the command line/terminal
-and the path to the data file is provided there.
+Although functions may be imported as a module, it is recommended that the tool is as a script used from the
+command line/terminal and the path to the data file is provided there.
 
 Author: Ayush Doshi
 """
@@ -279,12 +279,12 @@ def batch_addresses_to_blockgroup(unmatched_df):
         api_result_df = pandas.DataFrame(api_result_dict).drop(columns=['address', 'match', 'matchtype',
                                                                         'parsed', 'tigerlineid', 'side'])
 
-        # Join the converted address columns back to the unmatched DataFrame using the 'id' column and replace empty 
+        # Join the converted address columns back to the unmatched DataFrame using the 'id' column and replace empty
         # whitespace with NaN's.
         merged_api_df = unmatched_df.merge(api_result_df, on='id')
         merged_api_df.replace(r'^\s*$', numpy.NaN, regex=True, inplace=True)
 
-        # To the list of matched address DataFrames, append a DataFrame that is subset of the returned DataFrame where 
+        # To the list of matched address DataFrames, append a DataFrame that is subset of the returned DataFrame where
         # a value was found for the U.S. Census Block.
         matched_df_list.append(merged_api_df[merged_api_df['block'].notna()])
 
@@ -623,13 +623,13 @@ def export_data(successful_df, failed_df, patient_data_df):
         'Exporting successfully and unsuccessfully geocoded address DataFrames to successful.csv and unsuccessful.csv '
         'respectively...')
 
-    # Explode the values in the 'data_id' column for the successful and failed address DataFrame, so that each row has 
-    # its own data_id and where it is possible for multiple data_ids to share the same address. Drop the 'id' column 
+    # Explode the values in the 'data_id' column for the successful and failed address DataFrame, so that each row has
+    # its own data_id and where it is possible for multiple data_ids to share the same address. Drop the 'id' column
     # that was used to identify unique addresses.
     successful_df = successful_df.explode('data_id', ignore_index=True).drop(columns='id')
     failed_df = failed_df.explode('data_id', ignore_index=True).drop(columns='id')
 
-    # Merge the address data back to the patient data to recreate the original data that was provided, now with geocode 
+    # Merge the address data back to the patient data to recreate the original data that was provided, now with geocode
     # and ADI information.
     successful_df = patient_data_df.merge(successful_df, on='data_id').drop(columns='data_id')
     failed_df = patient_data_df.merge(failed_df, on='data_id').drop(columns='data_id')
