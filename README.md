@@ -12,7 +12,7 @@ The source code is currently hosted on GitHub at:
 https://github.com/AyushDoshi/geocode-adi.
 
 Binary installers for released versions are available at the 
-[Python Package Index (PyPI)][geocode-adi-pypi].
+[Python Package Index (PyPI)][geocode-adi-pypi]. To run the script, Python 3.6 or greater is required.
 ```
 pip install geocode-adi
 ```
