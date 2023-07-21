@@ -15,7 +15,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="geocode-adi",
-    version="2.0.0",
+    version="2.1.0",
     description="Map addresses to Area Deprivation Index through U.S. Census Block Groups",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -25,11 +25,11 @@ setup(
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3"
     ],
     python_requires='>=3.8',
     packages=["geocode-adi"],
     include_package_data=True,
-    install_requires=["requests", "tqdm", "censusgeocode", "geopy", "pandas", "numpy", "pyarrow"]
+    install_requires=["requests==2.29.0", "tqdm", "censusgeocode", "geopy", "pandas", "numpy", "pyarrow"],
+    package_dir={'/': 'geocode-adi'}
 )

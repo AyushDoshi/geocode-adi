@@ -24,12 +24,18 @@ import pandas
 import requests
 import tqdm
 
-# Dictionary that contains pairs of benchmarks and vintages needed to acquire U.S. Census Block Group information from
-# addresses and coordinates.
-benchmark_vintage_pairs_dict = {
-    'Public_AR_Current': ['Census2010_Current', 'ACS2019_Current', 'ACS2018_Current', 'ACS2017_Current'],
-    'Public_AR_TAB2020': ['ACS2019_TAB2020', 'ACS2018_TAB2020', 'ACS2017_TAB2020', 'Census2010_TAB2020'],
-    'Public_AR_Census2020': ['Census2010_Census2020']}
+
+# Build a dictionary that contains the benchmarks and associated vintages that are available by the U.S. Census Block
+# Group to get geographic data from addresses and coordinates
+benchmark_vintage_pairs_dict = dict()
+benchmarks_dict_list = requests.get('https://geocoding.geo.census.gov/geocoder/benchmarks').json()['benchmarks']
+for benchmark_dict in benchmarks_dict_list:
+    vintages_request_URL = 'https://geocoding.geo.census.gov/geocoder/vintages?benchmark=' + benchmark_dict['id']
+    vintages_dict_list = requests.get(vintages_request_URL).json()['vintages']
+    vintages_dict_list.reverse()
+    vintages_dict_list = vintages_dict_list[-1:] + vintages_dict_list[:-1]
+    vintages_list = [vintage_dict['vintageName'] for vintage_dict in vintages_dict_list]
+    benchmark_vintage_pairs_dict[benchmark_dict['benchmarkName']] = vintages_list
 
 # Convert dictionary of benchmark and vintage pairs to a list of tuples.
 benchmark_vintage_tuple_list = [(benchmark, vintage)
@@ -634,5 +640,5 @@ def export_data(successful_df, failed_df, patient_data_df):
     failed_df = patient_data_df.merge(failed_df, on='data_id').drop(columns='data_id')
 
     # Export the successfully and unsuccessfully geocoded DataFrames to CSV.
-    successful_df.to_csv('successful.csv', index=False)
-    failed_df.to_csv('failed.csv', index=False)
+    successful_df.to_csv('successful.csv', index=False, na_rep='NaN')
+    failed_df.to_csv('failed.csv', index=False, na_rep='NaN')

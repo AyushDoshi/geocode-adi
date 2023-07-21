@@ -5,7 +5,11 @@
 **geocode-adi** is a Python package that allows for the mapping of address information to Gopal K. Singh's 
 [**Area Deprivation Index (ADI)**][adi-paper] at the U.S. Census Block Group level, which was calculated by the 
 [**Applied Population Lab at UW-Madison**][pop-lab] and made available on 
-[**UW-Madison's Neighborhood Atlas**][neigh-atlas].
+[**UW-Madison's Neighborhood Atlas**][neigh-atlas]. For a given address, it will map to the ADI National
+Percentiles and State Deciles for the following years/versions:
+- 2021
+- 2020
+- 2015
 
 ## Where to get it?
 The source code is currently hosted on GitHub at:
